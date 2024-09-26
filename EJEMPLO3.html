@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Color de Fondo</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <button id="colorButton">Cambiar Color de Fondo</button>
+
+    <script>
+        const colors = ['#FF5733', '#33FF57', '#3357FF', '#F3FF33', '#FF33A1'];
+        const button = document.getElementById('colorButton');
+        for (let i = 0; i < colors.length; i++) {
+            console.log(`Color ${i + 1}: ${colors[i]}`);
+        }
+        button.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            document.body.style.backgroundColor = colors[randomIndex];
+        });
+    </script>
+</body>
+</html>
